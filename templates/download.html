@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Download Parts{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-header">
+        Download Split Video Parts
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            {% for path in split_paths %}
+            <li class="list-group-item">
+                <a href="{{ url_for('download_file', filename=path) }}" class="btn btn-primary">Download {{ path }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
